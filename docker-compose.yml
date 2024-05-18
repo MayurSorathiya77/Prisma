@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  postgres:
+    container_name: prisma_db
+    image: postgres
+    ports:
+      - "5432:5432" # Corrected port mapping format
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=postgres # Corrected environment variable format
+      - POSTGRES_DB=threads
+      - POSTGRES_PASSWORD=threads
+
+volumes:
+  postgres_data: # Corrected volume declaration
